@@ -14,13 +14,15 @@ function AddCategory({ setCategories }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputValue.trim().length > 2) {
-            setCategories(cat => [inputValue,...cat]);
+            setCategories(cat => [inputValue, ...cat]);
+            setInputValue('');
         }
         // console.log('Submint hecho')
     }
 
     return (
         <form onSubmit={handleSubmit}>
+            <p>{inputValue}</p>
             <input
                 type="text"
                 value={inputValue}
